@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerHealth : MonoBehaviour
+{
+    public int maxHealth = 3;
+    private int currentHealth;
+
+    public float moveSpeed = 5f; // Adjust the movement speed as needed
+
+    void Start()
+    {
+        Debug.Log("Player Total Start Health is "+ maxHealth);
+        currentHealth = maxHealth;
+    }
+
+    void Update()
+    {
+        // Handle player movement
+        MovePlayer();
+
+        // Check for collisions with enemies
+
+    }
+
+    void MovePlayer()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f) * moveSpeed * Time.deltaTime;
+        transform.Translate(movement);
+    }
+
+
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Enemy"))
+        {
+            currentHealth = currentHealth - 1;
+            Debug.Log("Now Your Health is "+ currentHealth);
+            if (currentHealth == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+     }
+
+   
+   
+}
