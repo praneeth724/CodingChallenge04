@@ -28,4 +28,6 @@ Describe any challenges you encountered during the implementation and how you ov
 🎉 Conclusion:
 Excited to share the results of this coding challenge! It's a small step, but every step forward is a victory in the world of game development. Looking forward to more challenges and continuous improvement!
 
+✨Learn about Unity Scripting
+https://docs.unity3d.com/ScriptReference/index.html
 #Unity #GameDevelopment #CodingChallenge #HealthSystem #IndieDev
